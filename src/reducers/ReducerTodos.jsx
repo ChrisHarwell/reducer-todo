@@ -17,7 +17,7 @@ import {v4 as uuidv4} from 'uuid'
 */
 
 // export the initial state object
-export const todoState = { 
+export const todoInitialState = { 
   item: "Learn about reducers",
   completed: false,
   id: uuidv4(),
@@ -32,10 +32,10 @@ export const todoReducer = (state, action) => {
         ...state,
         completed: !state.completed
       };
-      case "UPDATE_TITLE":
+      case "ADD_TODO":
         return {
           ...state,
-          title: action.payload,
+          item: action.payload,
           completed: false
         };
         default:
