@@ -2,15 +2,13 @@ import React, { useState, useReducer } from "react";
 import { todoReducer, todoInitialState } from "../reducers/ReducerTodos";
 
 const ToDos = () => {
-  const [todoState, dispatch] = useReducer(todoReducer, todoInitialState.item);
-  const [newTodo, setNewTodo] = useState("");
 
   const handleChanges = (e) => {
     setNewTodo(e.target.value);
   };
   return (
     <>
-      <div>
+      <form>
         <input
           type="text"
           name="newTodo"
@@ -31,7 +29,7 @@ const ToDos = () => {
             dispatch({ type: "TOGGLE_COMPLETED" });
           }}
         ></input>
-      </div>
+      </form>
     </>
   );
 };
