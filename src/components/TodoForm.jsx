@@ -1,26 +1,20 @@
-import React, { useState, useReducer } from "react";
+import React from "react";
 
 const TodoForm = (props) => {
 
   return (
     <>
-      <form onSubmit={props.handleSubmit}>
+       <form onSubmit={props.onSubmit}>
         <input
           type="text"
-          name="title"
-          onChange={props.handleChanges}
-          value={props.newTodo}
+          name="item"
+          value={props.value}
+          onChange={props.onChange}
         />
-        <input
-          type="radio"
-          name="completed"
-          toggleTodo={props.toggleTodo}
-        ></input>
-        <button type="submit">New Todo</button>
+        <button>Add Todo</button>
       </form>
-      <pre>{JSON.stringify(props.todoState, null, 2)}</pre>
     </>
-  );
+  )
 };
 
 export default TodoForm;
